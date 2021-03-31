@@ -1,0 +1,22 @@
+body 
+{ background-repeat: no-repeat;
+background-size: contain;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 265px;
+  width: 530px;
+  height: 400px;
+  
+  box-sizing: border-box;
+  box-shadow: inset -11px -11px 0px 0px rgb(183 189 181 / 6%);
+  background-color: white;
+  padding: 10px;
+}
+
+.views {order: 0;
+		width: 50%;}
+.price {order: 1}
+.header {display: flex}

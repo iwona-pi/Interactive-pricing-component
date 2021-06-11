@@ -16,12 +16,14 @@ background-size: contain;
   padding: 10px;
 }
 
-.views, .month {order: 0;
-				width: 50%;}
-.price , .year {order: 1}
-.header, .billings {display: flex}
+.views, .month,
+.list,  {order: 0;
+		width: 50%;}
+.price,  {order: 1}
+.header, .billings, .list_button {display: flex}
 
 .switch {
+  order: 1;
   position: relative;
   display: inline-block;
   width: 60px;
@@ -31,6 +33,7 @@ background-size: contain;
   opacity: 0;
   width: 0;
   height: 0;
+  margin-right: 20px;
 }
 .slider {
   position: absolute;
@@ -73,7 +76,7 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 .d {
-  
+  order: 3;
   top: 0;
   left: 0;
   right: 0;
@@ -83,5 +86,55 @@ input:checked + .slider:before {
   height: fit-content;
   padding: 2px;
   padding-top: 1px;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 10px;                             
   
 }
+
+.year {
+	order: 2;
+	margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 10px;
+    
+}
+
+#cowbell {
+	width: -webkit-fill-available;
+	margin-top: 30px;
+}
+
+.price {
+	padding-left: 40px;
+    font-size: xx-large;
+    margin-left: 150px;
+
+}
+.views {
+	font-size: larger;
+	margin-bottom: auto;
+    margin-top: auto;
+}
+.header {
+	margin-top: 30px;			
+}
+.month {
+	margin-top: auto;
+    margin-bottom: auto;
+    width: 120px;
+}
+.billings {
+	padding-left: 70px;
+	margin-top: 50px;
+}
+.line {
+	border: 1px solid #e4e4ca61;
+	margin-top: 40px;
+}
+
+.list {
+
+}
+.button {order:1;
+		margin: auto;}

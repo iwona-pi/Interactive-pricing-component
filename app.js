@@ -49,7 +49,7 @@ var octopus = {
 		return model.data
 	},
 	init: function() {
-		model.currentView = model.data[0];
+		model.currentView = model.data[2];
 		
 		
 		PagePriceView.init();
@@ -67,7 +67,9 @@ var PagePriceView = {
 		var currentView = octopus.getcurrentView();
 		
 		this.ViewsElem = document.getElementById("number_views");
+		this.PriceElem = document.getElementById("price");
 		this.ViewsElem.innerText = currentView.show;
+		this.PriceElem.innerText = currentView.price;
 		//this.val = document.getElementById("cowbell").value;
 		this.input = document.getElementById("cowbell");
 

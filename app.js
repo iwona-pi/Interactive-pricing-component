@@ -4,46 +4,38 @@ var model = {
 	{
 		views: 10000,
 		show: '10k',
-		price: '$8'
+		price: 8,
 
 		},
 	
 	{	
 		views: 50000,
 		show: '50k',
-		price: '$12'
+		price: 12
 		
 		},
 {	
 		views: 100000,
 		show: '100k',
-		price: '$16'
+		price: 16
 		
 		},
 {	
 		views: 500000,
 		show: '500k',
-		price: '$24'
+		price: 24
 		
 		},		
 {	
 		views: 1000000,
 		show: '1M',
-		price: '$36'
+		price: 36
 		
 		},		
 		]				
 };
 
-/*var octopus = {
-	//let val = document.getElementById("cowbell").value;
-	getprice: function() {
-		this.val = document.getElementById("cowbell").value;
-		for (i=0; i< model.data.length; i++) {
-			if model.data[i].views =this.val;
-		} document.getElementsByClassName("number_views").innerText = val
-	}
-};*/
+
 var octopus = {
 	getData: function() {
 		return model.data
@@ -51,8 +43,10 @@ var octopus = {
 	init: function() {
 		model.currentView = model.data[2];
 		
-		
+		View.init();
 		PagePriceView.init();
+		YearlyBillingView.init();
+		
 },
 	setcurrentView: function(data) {
 		model.currentView = data;
@@ -64,33 +58,75 @@ var octopus = {
 
 var PagePriceView = {
 	init: function() {
-		var currentView = octopus.getcurrentView();
 		
-		this.ViewsElem = document.getElementById("number_views");
-		this.PriceElem = document.getElementById("price");
-		this.ViewsElem.innerText = currentView.show;
-		this.PriceElem.innerText = currentView.price;
-		//this.val = document.getElementById("cowbell").value;
+		this.YearlyBilling = document.getElementById("year_price");
 		this.input = document.getElementById("cowbell");
 
 		this.render();
 	},
 
 	render: function() {
+		var currentView = octopus.getcurrentView();
 		
 		var data = octopus.getData();
 		 
-		this.input.onchange= function() {
-			for (i=0; i<data.length; i++)
-			{ if (data[i].views <= this.value )
-				//|| data[i+1] >= this.value)
-				{octopus.setcurrentView(data[i]);
-					PagePriceView.init();
-				};
+			this.input.onchange= function() {
+			
+				for (i=0; i<data.length; i++)
+					{ if (data[i].views <= this.value )
+						
+						{octopus.setcurrentView(data[i]);
+					 
+						View.render();
+						YearlyBillingView.render();					
+				}
 			}
 		}
 	}
 
+}
+
+var View = {
+	init: function() {
+		var currentView = octopus.getcurrentView();
+		this.ViewsElem = document.getElementById("number_views");
+		this.PriceElem = document.getElementById("price");
+		this.YearlyBilling = document.getElementById("year_price");
+		this.render();
+	},
+
+	render: function() {
+		var currentView = octopus.getcurrentView();
+		this.ViewsElem.innerText = currentView.show;
+		this.PriceElem.innerText = currentView.price + '$';
+
+		this.YearlyBilling.onchange = function () {
+			if (this.checked) {
+				YearlyBillingView.render();
+			} else {
+				View.render();
+			}
+		}
+	}
+}
+
+var YearlyBillingView = {
+	init: function() {
+		
+		this.YearlyBilling = document.getElementById("year_price");
+		
+		this.render();
+	},
+
+	render: function() {
+
+		var discount = 0.75;
+		this.PriceElemOff = document.getElementById("price");	
+		
+		if (this.YearlyBilling.checked == true) {
+			this.PriceElemOff.innerText = model.currentView.price*discount + '$';			
+		}
+	}
 };
 
 octopus.init();

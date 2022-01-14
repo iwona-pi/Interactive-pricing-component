@@ -6,7 +6,7 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="app.css">
-  
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
   <title>Frontend Mentor | Interactive pricing component</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -19,15 +19,21 @@
 <body>
 <div>
 <!-- <svg xmlns="http://www.w3.org/2000/svg" width="1440" height="449"><path fill="#F1F5FE" fill-rule="evenodd" d="M0 0h1440v449H191.5C85.737 449 0 363.263 0 257.5V0z"/></svg> -->
+  <div class="title"><span class="title_1">Simple, traffic-based pricing</span>
+  <span class="title_2">Sign-up for our 30-day trial. No credit card required. </span></div>
   <div class="container">
     <div class="header">
-      <div class="views"><span id="number_views"></span> pageviews</div>
-      <div class="price"><span id="price"></span>/month</div>
+      <div class="views"><span id="number_views"></span> PAGEVIEWS</div>
+        <div class="right_header">
+          <div class="price"><span id="price"></span></div>
+          <div class="month_view">/ month</div>
+        </div>
     </div>
-    <div>
-        <input type="range" id="cowbell" name="cowbell" 
+    <div class="rang">
+        <input type="range" id="cowbell"  class="tumb" name="cowbell" 
                min="10000" max="1000000"  >
         <!-- <label for="cowbell">Cowbell</label> -->
+    
     </div>
     <div class="billings">
       <div class="month">Monthly Billing</div>
@@ -41,9 +47,9 @@
      <div class="list_button">
       <div class="list">
         <ul>
-          <li>pierwsza pozycja</li>
-          <li>druga pozycja</li>
-          <li>trzecia pozycja</li>
+          <li>Unlimited websites</li>
+          <li>100% data ownership</li>
+          <li>Email reports</li>
         </ul>
       </div>
       <div class="button">
@@ -58,20 +64,10 @@
 
 
 
-  Simple, traffic-based pricing
-  Sign-up for our 30-day trial. No credit card required. 
+  
 
-  Pageviews
-  $ /month
 
-  Monthly Billing
-  Yearly Billing 25% discount
 
-  Unlimited websites
-  100% data ownership
-  Email reports
-
-  Start my trial
   
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
@@ -83,6 +79,11 @@
     var encodedSVG = encodeURIComponent(SVG);
     var body = document.querySelector("body");
     body.style.backgroundImage = `url("data:image/svg+xml,${encodedSVG}")`;
+
+  /*  $( '.rang input' ).on( 'input', function( ) {
+  $( this ).css( 'background', 'linear-gradient(to right, green 0%, green '+this.value +'%, #fff ' + this.value + '%, white 100%)' );
+} );*/
+
   </script>
   <script src="app.js"></script>
 </body>

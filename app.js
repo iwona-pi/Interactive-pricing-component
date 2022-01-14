@@ -3,26 +3,26 @@ var model = {
 	data:[
 	{
 		views: 10000,
-		show: '10k',
-		price: 8,
+		show: '10K',
+		price: 8
 
 		},
 	
 	{	
 		views: 50000,
-		show: '50k',
+		show: '50K',
 		price: 12
 		
 		},
 {	
 		views: 100000,
-		show: '100k',
+		show: '100K',
 		price: 16
 		
 		},
 {	
 		views: 500000,
-		show: '500k',
+		show: '500K',
 		price: 24
 		
 		},		
@@ -98,7 +98,7 @@ var View = {
 	render: function() {
 		var currentView = octopus.getcurrentView();
 		this.ViewsElem.innerText = currentView.show;
-		this.PriceElem.innerText = currentView.price + '$';
+		this.PriceElem.innerText = '$' + currentView.price.toFixed(2) ;
 
 		this.YearlyBilling.onchange = function () {
 			if (this.checked) {
@@ -124,7 +124,7 @@ var YearlyBillingView = {
 		this.PriceElemOff = document.getElementById("price");	
 		
 		if (this.YearlyBilling.checked == true) {
-			this.PriceElemOff.innerText = model.currentView.price*discount + '$';			
+			this.PriceElemOff.innerText = '$' + (model.currentView.price*discount).toFixed(2);			
 		}
 	}
 };

@@ -106,8 +106,9 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 .right_header {
-	width: 13em;
+	width: 60%;
     display: flex;
+    order: 1;
 }
 
 .d {
@@ -144,23 +145,26 @@ input:checked + .slider:before {
 
 .price {
 	font-size: 37px;
-    width: 50%;
+    width: 83%;
     font-weight: 600;
-    color: #2a2a56
+    color: #2a2a56;
+    text-align: right;
 
 }
 .views {
+	order: 0;
 	font-size: 15px;
 	margin-bottom: auto;
     margin-top: auto;
-    width: 60%;
+    width: 32%;
    /* color: #988f8f;*/
     font-weight: 600;
     letter-spacing: 2px;
     margin-left: 19px;
 }
 .header {
-	margin-top: 30px;			
+	margin-top: 30px;
+	flex-wrap: wrap;			
 }
 .month {
 	margin-top: auto;
@@ -196,19 +200,21 @@ li {
 	font-size: 19px;
     margin-top: auto;
     margin-bottom: auto;
-    width: 50%;
-    margin-right: 21px;
-    padding-left: 18px;
+    width: 28%;
+    text-align: right;
+ /*   margin-right: 21px;
+    padding-left: 18px;*/
 }
 
-/*.rang{
-	width: 429px;
-    margin-left: 19px;
+.rang {
+	width: 100%;
+    order: 2;
+}
 
-}*/
 [type=range], [type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
 }
+
 input[type=range] {
 	width:35.4em;
 	margin-left:1.3em;

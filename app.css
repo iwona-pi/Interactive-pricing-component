@@ -331,4 +331,26 @@ input[type=range]::-moz-range-thumb:active {
 	.button {
 		width: auto;
 	}
+	.header {
+		flex-direction: column;
+	}
+	.views {
+		text-align: center;
+    	width: 100%;
+    	order: 0;
+    	margin-left: unset;
+	}
+	.right_header {
+		order: 2;
+    	width: 83%;
+    	margin-top: 3em;
+	}
+	.rang {
+		order: 1;
+    	margin-top: 1em;
+	}
+	input[type=range] {
+		width: -webkit-fill-available;
+	}
+
 }

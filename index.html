@@ -6,6 +6,7 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="app.css">
+  
   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
   <title>Frontend Mentor | Interactive pricing component</title>
 
@@ -42,7 +43,7 @@
     <input type="checkbox" id="year_price">
     <span class="slider round"></span>
   </label>
-      <div class="year">Yearly Billing</div> <div class="d">25% discount</div>
+      <div class="year">Yearly Billing</div> <div class="d"></div>
     </div>
      <hr class="line">
     <div class="list_button">
@@ -84,7 +85,18 @@
   /*  $( '.rang input' ).on( 'input', function( ) {
   $( this ).css( 'background', 'linear-gradient(to right, green 0%, green '+this.value +'%, #fff ' + this.value + '%, white 100%)' );
 } );*/
-
+     
+    
+    function changeDiscount(x) {
+      if (x.matches) {
+        document.getElementsByClassName('d')[0].innerText = "-25%";
+      } else {
+        document.getElementsByClassName('d')[0].innerText = "25% discount"
+      }
+    }
+    var x = window.matchMedia("(max-width: 480px)");
+    changeDiscount(x);
+    x.addListener(changeDiscount);
   </script>
   <script src="app.js"></script>
 </body>

@@ -3,7 +3,7 @@ body {
 	
 	background-repeat: no-repeat;
 	background-size: contain;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Manrope', sans-serif;
 	color: #93989a;
 	background-color: #ebeef047;
 }
@@ -180,7 +180,7 @@ input:checked + .slider:before {
 	border: 1px solid #e4e4ca61;
 	margin-top: 40px;
 	margin-left: -28px;
-    width: 565px
+    width: inherit;
 }
 
 ul{
@@ -292,7 +292,7 @@ input[type=range]::-moz-range-thumb:active {
 	background-color: #34ac99;
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 480px) and (max-device-width: 480px) {
 	body {
 		
 		background-size: cover;
@@ -301,8 +301,8 @@ input[type=range]::-moz-range-thumb:active {
     align-items: center;
     flex-direction: column;
     /* justify-content: center; */
-   
-    padding-left: 20em;
+   	width: fit-content;
+    /*padding-left: 20em;*/
 		
 	}
 	.title_2 {
@@ -311,11 +311,12 @@ input[type=range]::-moz-range-thumb:active {
 	}
 	.title {
 		width: 35em;
+		margin-top: 4em;
 	}
 	.container {
 		margin-top: 2px;
     width: 25.8em;
-    height: 30em;
+    height: 33em;
 	}
 	.list_button, ul {
 		display: flex;
@@ -326,7 +327,8 @@ input[type=range]::-moz-range-thumb:active {
 	}
 	.billings {
 		display: flex;
-    flex-direction: row;
+    	flex-direction: row;
+    	padding-left: 0.5em;
 	}
 	.button {
 		width: auto;
@@ -351,6 +353,12 @@ input[type=range]::-moz-range-thumb:active {
 	}
 	input[type=range] {
 		width: -webkit-fill-available;
+		width: -moz-available;
 	}
+		
+	.attribution {
+		display: none;
+	}
+
 
 }
